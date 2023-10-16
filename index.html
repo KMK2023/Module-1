@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
+
+    <title>Roll a dice</title>
+</head>
+<body>
+
+    <div id="dice"></div>
+    <button id="button">Roll the dice</button>
+
+<script>
+    var dice ={sides:14,
+    roll: function(){
+        const randomNumber=Math.floor(Math.random()*this.sides)+1;
+        displayResult(randomNumber);
+    }
+    }
+    function displayResult(number){
+        var diceElement = document.getElementById('dice');
+        diceElement.innerHTML= number;
+    }
+
+    var rollAction = document.getElementById('button');
+    
+    rollAction.onclick = function(){dice.roll();};
+
+</script>
+
+<style>
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+button {
+  background-color: rgb(82, 186, 179);
+  border-radius: 6px;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-transform: uppercase;
+  width: 200px;
+  cursor: pointer;
+}
+#dice {
+  height: 100px;
+  width: 100px;
+  padding: 50px;
+  margin: 50px auto;
+  border: 1px solid gray;
+  border-radius: 10px;  
+  font-size:80px;
+}
+
+</style>
+  </body>
+</html>
+
